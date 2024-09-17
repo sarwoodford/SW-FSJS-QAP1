@@ -1,0 +1,19 @@
+{
+  "name": "sw-fsjs-qap1",
+  "version": "1.0.0",
+  "description": "Password Generator CLI App - Fullstack Javascript QAP1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarwoodford/SW-FSJS-QAP1.git"
+  },
+  "author": "Sara Woodford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarwoodford/SW-FSJS-QAP1/issues"
+  },
+  "homepage": "https://github.com/sarwoodford/SW-FSJS-QAP1#readme"
+}
