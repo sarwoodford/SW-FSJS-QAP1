@@ -2,6 +2,29 @@
 
 const process = require('node:process');
 
+function passwordGenerator(length, numbers, upperCase, symbols){
+    let chars = 'abcdefghijklmnopqrstuvwxyz'
+
+    if(numbers = true){
+        chars += '0123456789'
+    }
+
+    if(upperCase = true){
+        chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    }
+
+    if (symbols = true){
+        chars += '!@#$%^&*()<>?_+=-:;.,/|'
+    }
+
+    let password = '';;
+    for (let i=0; i<length; i++){
+        const random = Math.floor(Math.random()*chars.length);
+        password += chars[random];
+    }
+    return password;
+}
+
 function helpFlag(){
     console.log(`Please enter fields using the format: generate (length (#))(numbers)(uppercase)(symbols) \n
         (length(#)): specify the length you want your password to be. If you don't specify an amount, the default length is 8.\n
