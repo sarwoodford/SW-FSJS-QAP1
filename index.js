@@ -22,6 +22,7 @@ function handleArgs(args){
     let length = defaultLength;
     let numbers = false;
     let upperCase = false;
+    let symbols = false;
 
     try{
         for(let i=0; i< args.length; i++){
@@ -45,6 +46,9 @@ function handleArgs(args){
                     break;
                 case 'uppercase':
                     upperCase = true;
+                    break;
+                case 'symbols':
+                    symbols = true;
                     break;
                 default: 
                     helpFlag();
