@@ -17,4 +17,42 @@ function helpFlag(){
         generate length 7 uppercase`);
 }
 
+function handleArgs(args){
+    const defaultLength = 8;
+    let length = defaultLength;
+    let numbers = false;
+    let upperCase = false;
+
+    try{
+        for(let i=0; i< args.length; i++){
+            const arg = args[i];
+            switch(arg){
+                case 'help':
+                    helpFlag();
+                    return;
+                case 'length':
+                    if(i+1 >= args.length || isNaN(args[i + 1])){
+                        throw new Error('Invalid password length. Please enter a positive number.');
+                    }
+                    length = parseInt(args[i+1], 10);
+                    if (length <=0){
+                        throw new Error('Invalid password length. Please enter a positive number.');
+                    }
+                    i++
+                    break;
+                case 'numbers':
+                    numbers = true;
+                    break;
+                case 'uppercase':
+                    upperCase = true;
+                    break;
+                default: 
+                    helpFlag();
+                    return;
+                    
+            }
+        }
+    }
+}
+
 handleArgs(process.argv.slice(2));
