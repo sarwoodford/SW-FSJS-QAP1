@@ -3,23 +3,23 @@
 const process = require('node:process');
 
 function passwordGenerator(length, numbers, upperCase, symbols){
-    let chars = 'abcdefghijklmnopqrstuvwxyz'
+    let chars = 'abcdefghijklmnopqrstuvwxyz';
 
-    if(numbers = true){
-        chars += '0123456789'
+    if(numbers === true){
+        chars += '0123456789';
     }
 
-    if(upperCase = true){
-        chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    if(upperCase === true){
+        chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     }
 
-    if (symbols = true){
-        chars += '!@#$%^&*()<>?_+=-:;.,/|'
+    if (symbols === true){
+        chars += '!@#$%^&*()<>?_+=-:;.,/|';
     }
 
-    let password = '';;
+    let password = '';
     for (let i=0; i<length; i++){
-        const random = Math.floor(Math.random()*chars.length);
+        const random = Math.floor(Math.random() * chars.length);
         password += chars[random];
     }
     return password;
@@ -79,7 +79,16 @@ function handleArgs(args){
                     
             }
         }
+        const password = passwordGenerator(length, numbers, upperCase, symbols);
+        console.log(`Your Password: ${password}`);
+    }catch (error){
+        console.log(error.message);
+        helpFlag();
     }
 }
+if (process.argv.length <= 2){
+    console.log(`Your Password: ${passwordGenerator(8, false, false, false)}`);
+}else{
+    handleArgs(process.argv.slice(2));
+}
 
-handleArgs(process.argv.slice(2));
