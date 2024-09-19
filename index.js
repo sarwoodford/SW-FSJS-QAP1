@@ -2,6 +2,8 @@
 
 const process = require('node:process');
 
+console.log (helpFlag());
+
 function passwordGenerator(length, numbers, upperCase, symbols){
     let chars = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -42,7 +44,10 @@ function helpFlag(){
         Running in Terminal: \n
         node index.js length 10 symbols\n
         node index.js numbers uppercase\n
-        node index.js length 6 uppercase symbols`);
+        node index.js length 6 uppercase symbols \n
+        \n
+        Run: node index.js help to see this message`);
+        
 }
 
 function handleArgs(args){
