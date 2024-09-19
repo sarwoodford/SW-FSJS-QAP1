@@ -2,7 +2,11 @@
 
 const process = require('node:process');
 
+// PRESENT HELP FLAG BEFORE USER INPUTS ANYTHING
+
 console.log (helpFlag());
+
+// PASSWORD GENERATOR FUNCTION: chnages characters used based on user arguments passed in
 
 function passwordGenerator(length, numbers, upperCase, symbols){
     let chars = 'abcdefghijklmnopqrstuvwxyz';
@@ -27,6 +31,8 @@ function passwordGenerator(length, numbers, upperCase, symbols){
     return password;
 }
 
+// HELP FLAG FUNCTION: presents information to user on how to use program and how to see the help message
+
 function helpFlag(){
     console.log(`Please enter fields using the format: generate (length (#))(numbers)(uppercase)(symbols) \n
         (length(#)): specify the length you want your password to be. If you don't specify an amount, the default length is 8.\n
@@ -49,6 +55,9 @@ function helpFlag(){
         Run: node index.js help to see this message`);
         
 }
+
+// HANDLE ARGS FUNCTION: changes the given randomized password based on which arguments the user specified
+//                       and handles invalid length values
 
 function handleArgs(args){
     const defaultLength = 8;
@@ -89,6 +98,9 @@ function handleArgs(args){
                     
             }
         }
+
+        // print password to user
+        
         const password = passwordGenerator(length, numbers, upperCase, symbols);
         console.log(`Your Password: ${password}`);
     }catch (error){
