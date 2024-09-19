@@ -37,7 +37,12 @@ function helpFlag(){
         Example: \n
         generate length 10 numbers symbols\n
         generate uppercase symbols\n
-        generate length 7 uppercase`);
+        generate length 7 uppercase\n
+        \n
+        Running in Terminal: \n
+        node index.js length 10 symbols\n
+        node index.js numbers uppercase\n
+        node index.js length 6 uppercase symbols`);
 }
 
 function handleArgs(args){

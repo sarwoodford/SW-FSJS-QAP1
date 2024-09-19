@@ -1,6 +1,9 @@
 {
   "name": "sw-fsjs-qap1",
   "version": "1.0.0",
+  "bin":{
+    "index" : "./index.js"
+  },
   "description": "Password Generator CLI App - Fullstack Javascript QAP1",
   "main": "index.js",
   "scripts": {
