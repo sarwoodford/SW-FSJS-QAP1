@@ -43,10 +43,7 @@ function helpFlag(){
         *if (numbers), (uppercase) and/or (symbols) aren't specified, none will be included.\n
         \n
         Example: \n
-        generate length 10 numbers symbols\n
-        generate uppercase symbols\n
-        generate length 7 uppercase\n
-        \n
+  
         Running in Terminal: \n
         node index.js length 10 symbols\n
         node index.js numbers uppercase\n
@@ -100,7 +97,7 @@ function handleArgs(args){
         }
 
         // print password to user
-        
+
         const password = passwordGenerator(length, numbers, upperCase, symbols);
         console.log(`Your Password: ${password}`);
     }catch (error){
